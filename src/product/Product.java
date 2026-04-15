@@ -1,6 +1,6 @@
-package main_supermarket;
+package product;
 
-public class Product {
+public class Product implements ProductReadOnly{
 	private int id;
 	private String name;
 	private double price;
@@ -56,18 +56,24 @@ public class Product {
 	}
 	
 	//getters
+	@Override
 	public int getId() {return this.id;}
+	@Override
 	public String getName() {return this.name;}
+	@Override
 	public double getPrice() {return this.price;}
 	
 	
 	//methods
-	
+	@Override
 	public boolean isValid() {
 		return validId(this.id) && validName(name) && validPrice(this.price);
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return "[id: " + this.getId() + ", name: '" + this.getName() + "', price: " + this.getPrice() + "]";
+	}
 	
 }
