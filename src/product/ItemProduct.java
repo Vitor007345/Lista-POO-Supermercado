@@ -52,7 +52,7 @@ public class ItemProduct<P extends ProductReadOnly> {
 	}
 	
 	public boolean remove(int value) {
-		if(this.qnt > 0) {
+		if(this.qnt - value >= 0) {
 			this.qnt-= value;
 			return true;
 		}

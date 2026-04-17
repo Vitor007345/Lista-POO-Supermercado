@@ -21,6 +21,10 @@ public class GroupOfItemProducts<P extends ProductReadOnly> {
 		return this.itemProducts.add(itemProduct);
 	}
 	
+	public boolean addProduct(P product, int qnt) {
+		return this.itemProducts.add(new ItemProduct<P>(product, qnt));
+	}
+	
 	public ItemProduct<P> getItemProduct(int id){
 		for(ItemProduct<P> IP : this.itemProducts) {
 			if(IP.getProduct().getId() == id) {
@@ -39,6 +43,7 @@ public class GroupOfItemProducts<P extends ProductReadOnly> {
 		}
 		return false;
 	}
+	
 	
 	public String listAll() {
 		String list = "";

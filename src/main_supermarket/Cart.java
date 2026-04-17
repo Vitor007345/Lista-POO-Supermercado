@@ -21,4 +21,10 @@ public class Cart extends GroupOfItemProducts<ProductReadOnly>{
 		}
 		return total;
 	}
+	
+	public double endShop() {
+		double totalPrice = this.totalPrice();
+		this.itemProducts.clear();
+		return totalPrice;
+	}
 }
